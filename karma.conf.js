@@ -28,6 +28,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
+    autoPolling: true,
     browsers: ['Chrome'],
     singleRun: false,
     concurrency: Infinity

@@ -1,8 +1,7 @@
 class Tanks {
 
-  constructor(player1, player2, shot, hit, position) {
-    this.player1 = {health:3 ,speed:1 ,armor:2 ,nuke:0};
-    this.player2 = {health:3 ,speed:1 ,armor:2 ,nuke:0};
+  constructor(player, shot, hit, position) {
+    this.player = {health:3 ,speed:1 ,armor:2 ,nuke:0};
     this.shot = shot;
     this.hit = hit;
     this.position = position;
@@ -21,24 +20,22 @@ class Tanks {
     let min = Math.ceil(3);
     let max = Math.floor(6);
     return console.log(Math.floor(Math.random() * (max - min)) + min);
-
   }
 
-  // return health of player
-  playerLife() {
-    if (this.player1.health === 0 || this.player2.health === 0) {
+
+  playerLife() { // not working need to fix function inheritance
+    if (this.player.health === 0) {
       return "You have died. Your bones rot away in the dusty swamp."
-    } else if (playerAttack() === true){
-
-      return this.player1.armor - 1 || this.player2.armor - 1;
-
+    } else if (this.playerAttack() == true) {
+      return this.player.health - 1;
     }
-    return "made it";
+  return this.player.health;
   }
 
 
-  playerShot() {
   // return shot distance and drop
+  playerShot() {
+
   }
 
   // check if hit or a miss of a tank
